@@ -1,4 +1,5 @@
 <script>
+  import { fade } from "svelte/transition";
   let testimonials = [
     {
       message: "the best shit i’ve ever used",
@@ -157,29 +158,33 @@
       class="flex-col mx-auto max-w-screen-lg p-10 justify-center items-center  flex gap-10"
     >
       <div>testimonials</div>
-      <div class="text-4xl text-center font-bold">
-        “{testimonials[selectedTestimonial].message}”
-      </div>
-      <div class="flex gap-4 mt-5">
-        <div class="w-14">
-          <img
-            src="https://via.placeholder.com/100"
-            class="rounded-2xl "
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div>
-          <div class="font-bold text-2xl">
-            {testimonials[selectedTestimonial].name}
+      {#key selectedTestimonial}
+        <div in:fade class="flex flex-col w-full justify-center items-center">
+          <div class="text-4xl text-center font-bold">
+            “{testimonials[selectedTestimonial].message}”
           </div>
-          <div class="text-palette-darkGray">
-            {testimonials[selectedTestimonial].subname} • {testimonials[
-              selectedTestimonial
-            ].subsubname}
+          <div class="flex gap-4 mt-5">
+            <div class="w-14">
+              <img
+                src="https://via.placeholder.com/100"
+                class="rounded-2xl "
+                alt=""
+                srcset=""
+              />
+            </div>
+            <div>
+              <div class="font-bold text-2xl">
+                {testimonials[selectedTestimonial].name}
+              </div>
+              <div class="text-palette-darkGray">
+                {testimonials[selectedTestimonial].subname} • {testimonials[
+                  selectedTestimonial
+                ].subsubname}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      {/key}
       <div class="flex gap-4 ml-auto">
         {#each testimonials as t, index}
           <div
