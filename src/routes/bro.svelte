@@ -1,3 +1,21 @@
+<script>
+  let testimonials = [
+    {
+      message: "the best shit i’ve ever used",
+      name: "Danny boiii",
+      subname: "twitch streamer",
+      subsubname: "64k subs ",
+    },
+    {
+      message: "literally the best shit i’ve ever used",
+      name: "Danny boii2i",
+      subname: "twitch streamer",
+      subsubname: "64k subs ",
+    },
+  ];
+  let selectedTestimonial = 0;
+</script>
+
 <section>
   <div
     class=" p-10 overflow flex-col md:flex-row gap-5 text-palette-yellow400 flex items-center justify-between"
@@ -50,7 +68,7 @@
       <div class=" text-palette-yellow400 font-bold text-4xl">
         the astounding photoshoot
       </div>
-      <div class=" text-palette-darkGray text-xl sm:text-4xl">
+      <div class=" text-palette-darkGray text-xl sm:text-3xl">
         got a gallery of pictures from your latest photoshoot?
       </div>
       <div
@@ -68,7 +86,7 @@
       <div class="  text-palette-yellow400 font-bold  text-4xl">
         “which one should i post?”
       </div>
-      <div class="  text-palette-darkGray  text-xl sm:text-4xl">
+      <div class="  text-palette-darkGray  text-xl sm:text-3xl">
         ahhh the inevitable dilemma. does this one look good? but that one’s
         better...hmmm 🤔
       </div>
@@ -91,8 +109,100 @@
     <div class="text-4xl text-center text-palette-yellow400 font-bold">
       put an end to this dilemma
     </div>
-    <div class="text-2xl text-palette-darkGray font-bold">
-      in 2 simple steps
+    <div class="text-2xl text-palette-darkGray ">in 2 simple steps</div>
+  </div>
+  <div class="mt-44 flex-col mx-auto max-w-screen-lg p-10">
+    <div class="text-4xl font-bold text-palette-yellow400">
+      upload all your pictures to PickForest
+    </div>
+    <div class="text-2xl text-palette-darkGray">
+      it’s as simple as dragging and dropping
+    </div>
+    <div
+      class="w-full flex items-center justify-center rounded-2xl mt-6 h-96 bg-palette-yellow300"
+    >
+      video
+    </div>
+  </div>
+  <div class=" flex-col mx-auto max-w-screen-lg p-10 ">
+    <div class="text-4xl font-bold text-palette-yellow400 ">
+      send the link to your close friends, family, neighbours, dog
+    </div>
+    <div class="text-2xl text-palette-darkGray ">
+      and let them choose which one to post. easy peasy
+    </div>
+    <div
+      class="w-full  flex items-center justify-center rounded-2xl mt-6 h-96 bg-palette-yellow300"
+    >
+      video
+    </div>
+  </div>
+  <div
+    class="flex-col mx-auto max-w-screen-lg p-10 gap-4 flex md:items-center justify-center"
+  >
+    <div class="text-5xl md:text-center md:max-w-xl font-bold  ">
+      Get crowd sentiment before posting anything on the socials
+    </div>
+    <div
+      class="mt-10 p-5 bg-palette-yellow300 w-fit rounded-2xl font-extrabold cursor-pointer"
+    >
+      get started
+    </div>
+  </div>
+  <div class="bg-palette-yellow200   my-10 py-16">
+    <div
+      class="flex-col mx-auto max-w-screen-lg p-10 justify-center items-center  flex gap-10"
+    >
+      <div>testimonials</div>
+      <div class="text-4xl text-center font-bold">
+        “{testimonials[selectedTestimonial].message}”
+      </div>
+      <div class="flex gap-4 mt-5">
+        <div class="w-14">
+          <img
+            src="https://via.placeholder.com/100"
+            class="rounded-2xl "
+            alt=""
+            srcset=""
+          />
+        </div>
+        <div>
+          <div class="font-bold text-2xl">
+            {testimonials[selectedTestimonial].name}
+          </div>
+          <div class="text-palette-darkGray">
+            {testimonials[selectedTestimonial].subname} • {testimonials[
+              selectedTestimonial
+            ].subsubname}
+          </div>
+        </div>
+      </div>
+      <div class="flex gap-4 ml-auto">
+        {#each testimonials as t, index}
+          <div
+            class={`px-4 cursor-pointer ${
+              selectedTestimonial === index
+                ? "bg-palette-yellow300 text-black"
+                : ""
+            } py-1  rounded-xl`}
+            on:click={() => (selectedTestimonial = index)}
+          >
+            {index + 1}
+          </div>
+        {/each}
+      </div>
+    </div>
+  </div>
+  <div
+    class="flex-col mx-auto max-w-screen-lg p-10 gap-4 flex md:items-center justify-center"
+  >
+    <div class="text-5xl md:text-center md:max-w-xl font-bold  ">
+      Get crowd sentiment before posting anything on the socials
+    </div>
+    <div
+      class="mt-10 p-5 bg-palette-yellow300 w-fit rounded-2xl font-extrabold cursor-pointer"
+    >
+      get started
     </div>
   </div>
 </section>
