@@ -1,5 +1,9 @@
 module.exports = {
   content: ["./src/**/*.{html,js,svelte,ts}"],
+
+  plugins:[
+    require('@tailwindcss/aspect-ratio'),
+  ],
   theme: {
     extend: {
       colors: {

@@ -122,10 +122,13 @@
     <div class="text-2xl text-palette-darkGray">
       it’s as simple as dragging and dropping
     </div>
-    <div
-      class="w-full flex items-center justify-center rounded-2xl mt-6 h-96 bg-palette-yellow300"
-    >
-      video
+    <div class="w-full  flex items-center justify-center rounded-2xl mt-6">
+      <div class="aspect-w-16 aspect-h-9 ">
+        <video class=" rounded-3xl" loop autoplay muted>
+          <source src="render.mp4" type="video/mp4" />
+          Video comes here....hmmm looks like you dont support video yet
+        </video>
+      </div>
     </div>
   </div>
   <div class=" flex-col mx-auto max-w-screen-lg p-10 ">
