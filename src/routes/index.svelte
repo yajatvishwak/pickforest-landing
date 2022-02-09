@@ -124,10 +124,19 @@
     </div>
     <div class="w-full  flex items-center justify-center rounded-2xl mt-6">
       <div class="aspect-w-16 aspect-h-9 ">
-        <video class=" rounded-3xl" loop autoplay muted>
-          <source src="render.mp4" type="video/mp4" />
+        <video
+          class=" hidden lg:block rounded-3xl"
+          loop
+          preload
+          muted
+          autoplay
+          playsinline
+        >
+          <source src="conv1.mp4" type="video/mp4" />
           Video comes here....hmmm looks like you dont support video yet
         </video>
+
+        <img src="conv1.gif" class=" lg:hidden  rounded-3xl" alt="" srcset="" />
       </div>
     </div>
   </div>
