@@ -147,10 +147,22 @@
     <div class="text-2xl text-palette-darkGray ">
       and let them choose which one to post. easy peasy
     </div>
-    <div
-      class="w-full  flex items-center justify-center rounded-2xl mt-6 h-96 bg-palette-yellow300"
-    >
-      video
+    <div class="w-full  flex items-center justify-center rounded-2xl mt-6">
+      <div class="aspect-w-16 aspect-h-9 ">
+        <video
+          class=" hidden lg:block rounded-3xl"
+          loop
+          preload
+          muted
+          autoplay
+          playsinline
+        >
+          <source src="conv2.mp4" type="video/mp4" />
+          Video comes here....hmmm looks like you dont support video yet
+        </video>
+
+        <img src="conv2.gif" class=" lg:hidden  rounded-3xl" alt="" srcset="" />
+      </div>
     </div>
   </div>
   <div
@@ -214,7 +226,7 @@
     </div>
   </div>
   <div
-    class="flex mx-auto max-w-screen-lg p-10 gap-4 flex-col md:flex-row justify-center items-center  "
+    class="flex mx-auto max-w-screen-lg p-10 gap-4 flex-col md:flex-row justify-center items-center text-center "
   >
     <div>
       <div
@@ -230,7 +242,7 @@
           reach us out
         </div>
         <div class="cursor-pointer hover:text-palette-yellow400">
-          suggestion box
+          built by 2 Coders
         </div>
       </div>
     </div>
