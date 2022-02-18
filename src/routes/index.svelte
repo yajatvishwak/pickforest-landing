@@ -1,5 +1,6 @@
 <script>
   import { fade } from "svelte/transition";
+  import swal from "sweetalert";
   let testimonials = [
     {
       message: "the best shit i’ve ever used",
@@ -18,6 +19,14 @@
   setInterval(() => {
     selectedTestimonial = ++selectedTestimonial % testimonials.length;
   }, 5000);
+  function workingon(params) {
+    swal({
+      title: "Hey there!",
+      text: "Looks like you are early here, We are still working on this button 🚀",
+
+      button: false,
+    });
+  }
 </script>
 
 <section>
@@ -39,14 +48,14 @@
       </svg>
       <div class="text-3xl font-bold">PickForest</div>
     </div>
-    <div class="flex  gap-5 md:gap-14 font-bold text-black">
-      <div class="">about</div>
-      <div>pricing</div>
+    <div class="flex gap-5 md:gap-14 font-bold text-black">
+      <a href="#about" class="cursor-pointer ">about</a>
+      <div on:click={workingon} class="cursor-pointer">pricing</div>
     </div>
     <div class="md:flex hidden gap-5 md:gap-14 items-center">
-      <div class="font-bold">sign in</div>
+      <div on:click={workingon} class="font-bold cursor-pointer">sign in</div>
       <div
-        class="rounded-xl p-3 bg-palette-yellow300 text-black font-bold px-10"
+        class="rounded-xl p-3 btn modal-button bg-palette-yellow300 text-black font-bold px-10"
       >
         sign up
       </div>
@@ -58,13 +67,17 @@
         Make every <span class="text-palette-yellow400">post count</span>
       </div>
       <div
+        on:click={workingon}
         class="mt-10 p-5 bg-palette-yellow300 rounded-2xl font-extrabold cursor-pointer"
       >
         get started
       </div>
     </div>
   </div>
-  <div class="mt-28   mx-auto max-w-screen-lg flex  flex-col md:flex-row ">
+  <div
+    id="about"
+    class="mt-28   mx-auto max-w-screen-lg flex  flex-col md:flex-row "
+  >
     <div class="w-1/2 mx-auto md:m-0">
       <img class="w-full" src="cam.png" alt="" />
     </div>
@@ -172,6 +185,7 @@
       Get crowd sentiment before posting anything on the socials
     </div>
     <div
+      on:click={workingon}
       class="mt-10 p-5 bg-palette-yellow300 w-fit rounded-2xl font-extrabold cursor-pointer"
     >
       get started
@@ -232,7 +246,12 @@
       <div
         class="text-xl gap-10  md:text-center md:max-w-xl  font-bold flex justify-center items-center md:justify-start md:items-start"
       >
-        <div class="cursor-pointer hover:text-palette-yellow400">pricing</div>
+        <div
+          on:click={workingon}
+          class="cursor-pointer hover:text-palette-yellow400"
+        >
+          pricing
+        </div>
         <div class="cursor-pointer hover:text-palette-yellow400">instagram</div>
       </div>
       <div
@@ -263,3 +282,9 @@
     </div>
   </div>
 </section>
+
+<style>
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+</style>
