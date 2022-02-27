@@ -19,6 +19,7 @@
   "type": "module",
   "dependencies": {
     "daisyui": "^2.0.9",
-    "sweetalert": "^2.1.2"
+    "sweetalert": "^2.1.2",
+    "vercel": "^24.0.0"
   }
 }

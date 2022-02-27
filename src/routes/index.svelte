@@ -278,6 +278,20 @@
       </div>
     </div>
   </div>
+
+  <div
+    class="flex-col mx-auto max-w-screen-lg p-10 gap-4 flex md:items-center justify-center"
+  >
+    <div class="text-5xl md:text-center md:max-w-xl font-bold  ">
+      Get crowd sentiment before posting anything on the socials
+    </div>
+    <div
+      on:click={workingon}
+      class="mt-10 p-5 bg-palette-yellow300 w-fit rounded-2xl font-extrabold cursor-pointer"
+    >
+      Get started
+    </div>
+  </div>
   <!-- <div
     class="flex-col mx-auto max-w-screen-lg p-10 gap-4 flex md:items-center justify-center"
   >
