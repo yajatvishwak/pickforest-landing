@@ -49,19 +49,20 @@
       <div class="text-3xl font-bold">PickForest</div>
     </div>
     <div class="flex gap-5 md:gap-14 font-bold text-black">
-      <a href="#about" class="cursor-pointer ">about</a>
-      <div on:click={workingon} class="cursor-pointer">pricing</div>
+      <a href="#about" class="cursor-pointer ">About</a>
+      <div on:click={workingon} class="cursor-pointer">Pricing</div>
     </div>
     <div class="md:flex hidden gap-5 md:gap-14 items-center">
-      <div on:click={workingon} class="font-bold cursor-pointer">sign in</div>
+      <div on:click={workingon} class="font-bold cursor-pointer">Sign in</div>
       <div
-        class="rounded-xl p-3 btn modal-button bg-palette-yellow300 text-black font-bold px-10"
+        on:click={workingon}
+        class="rounded-xl p-3 btn modal-button cursor-pointer bg-palette-yellow300 text-black font-bold px-10"
       >
-        sign up
+        Sign up
       </div>
     </div>
   </div>
-  <div class=" flex mt-10 p-10 w-full justify-center items-center">
+  <div class=" flex mt-28 p-10 w-full justify-center items-center">
     <div class="flex flex-col gap-5 items-center justify-center">
       <div class="text-7xl md:text-8xl font-extrabold text-center max-w-xl">
         Make every <span class="text-palette-yellow400">post count</span>
@@ -70,23 +71,23 @@
         on:click={workingon}
         class="mt-10 p-5 bg-palette-yellow300 rounded-2xl font-extrabold cursor-pointer"
       >
-        get started
+        Get started
       </div>
     </div>
   </div>
   <div
     id="about"
-    class="mt-28   mx-auto max-w-screen-lg flex  flex-col md:flex-row "
+    class="mt-40   mx-auto max-w-screen-lg flex  flex-col md:flex-row "
   >
     <div class="w-1/2 mx-auto md:m-0">
       <img class="w-full" src="cam.png" alt="" />
     </div>
     <div class="md:ml-auto relative p-10 md:w-1/2 flex-col flex gap-10 ">
       <div class=" text-palette-yellow400 font-bold text-4xl">
-        the astounding photoshoot
+        The Astounding photoshoot
       </div>
       <div class=" text-palette-darkGray text-xl sm:text-3xl">
-        got a gallery of pictures from your latest photoshoot?
+        Got a gallery of pictures from your latest photoshoot?
       </div>
       <div
         class="hidden lg:block lg:absolute h-4/5 -translate-x-2/3  translate-y-72"
@@ -101,10 +102,10 @@
   <div class=" md:mt-52  mx-auto  max-w-screen-lg flex flex-col md:flex-row  ">
     <div class=" p-10 pt-0 md:pt-10 relative md:w-2/3 flex-col flex gap-10 ">
       <div class="  text-palette-yellow400 font-bold  text-4xl">
-        “which one should i post?”
+        “Which one should I post?”
       </div>
       <div class="  text-palette-darkGray  text-xl sm:text-3xl">
-        ahhh the inevitable dilemma. does this one look good? but that one’s
+        Ahhh the inevitable dilemma. Does this one look good? But that one’s
         better...hmmm 🤔
       </div>
       <div
@@ -124,11 +125,12 @@
     class=" md:mt-52 p-10  mx-auto max-w-screen-lg flex flex-col justify-center items-center   "
   >
     <div class="text-4xl text-center text-palette-yellow400 font-bold">
-      put an end to this dilemma
+      Put an end to this dilemma
     </div>
     <div class="text-2xl text-palette-darkGray ">in 2 simple steps</div>
   </div>
-  <div class="mt-44 flex-col mx-auto max-w-screen-lg p-10">
+
+  <div class="mt-24 flex-col mx-auto max-w-screen-lg p-10">
     <div class="text-4xl font-bold text-palette-yellow400">
       upload all your pictures to PickForest
     </div>
@@ -178,6 +180,97 @@
       </div>
     </div>
   </div>
+  <div class="mt-10 flex-col mx-auto max-w-screen-lg p-10">
+    <div class="flex flex-col md:flex-row gap-3">
+      <div
+        class="p-10 flex  flex-1 flex-col justify-center items-center rounded-3xl bg-palette-yellow200"
+      >
+        <div class="text-palette-yellow400  ">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-24 w-24"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
+            />
+          </svg>
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="text-2xl text-center font-bold text-palette-yellow400">
+            Store pictures in Buckets
+          </div>
+          <div class="text-xl text-center text-palette-darkGray">
+            Buckets are ablum for all your pictures that can be voted on via a
+            sharable link
+          </div>
+        </div>
+      </div>
+      <div
+        class="p-10 flex flex-1 flex-col justify-center items-center rounded-3xl bg-palette-yellow200"
+      >
+        <div class="text-palette-yellow400 ">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-24 w-24"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+        </div>
+        <div class="flex flex-col gap-2 ">
+          <div class="text-2xl text-center font-bold text-palette-yellow400">
+            Time bound Voting on Buckets
+          </div>
+          <div class="text-xl text-center text-palette-darkGray">
+            Each Bucket can have a time limit during which the voting can take
+            place
+          </div>
+        </div>
+      </div>
+      <div
+        class="p-10 flex flex-1 flex-col justify-center items-center rounded-3xl bg-palette-yellow200"
+      >
+        <div class="text-palette-yellow400 ">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-24 w-24"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.7"
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+            />
+          </svg>
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="text-2xl text-center font-bold text-palette-yellow400">
+            Secure and Emphermal Storage
+          </div>
+          <div class="text-xl text-center text-palette-darkGray">
+            All the pictures you post are securely stored with 256 bit
+            encryption
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div
     class="flex-col mx-auto max-w-screen-lg p-10 gap-4 flex md:items-center justify-center"
   >
@@ -188,14 +281,14 @@
       on:click={workingon}
       class="mt-10 p-5 bg-palette-yellow300 w-fit rounded-2xl font-extrabold cursor-pointer"
     >
-      get started
+      Get started
     </div>
   </div>
-  <div class="bg-palette-yellow200   my-10 py-16">
+  <!-- <div class="bg-palette-yellow200 my-10 py-16">
     <div
       class="flex-col mx-auto max-w-screen-lg p-10 justify-center items-center  flex gap-10"
     >
-      <div>testimonials</div>
+      <div>Testimonials</div>
       {#key selectedTestimonial}
         <div in:fade class="flex flex-col w-full justify-center items-center">
           <div class="text-4xl text-center font-bold">
@@ -238,9 +331,9 @@
         {/each}
       </div>
     </div>
-  </div>
+  </div> -->
   <div
-    class="flex mx-auto max-w-screen-lg p-10 gap-4 flex-col md:flex-row justify-center items-center text-center "
+    class="flex mx-auto max-w-screen-lg p-10 mt-28 gap-4 flex-col md:flex-row justify-center items-center text-center "
   >
     <div>
       <div
@@ -252,12 +345,24 @@
         >
           pricing
         </div>
-        <div class="cursor-pointer hover:text-palette-yellow400">instagram</div>
+        <div
+          on:click={() => {
+            window.location.href = "https://twitter.com/2Coderz";
+          }}
+          class="cursor-pointer hover:text-palette-yellow400"
+        >
+          twitter
+        </div>
       </div>
       <div
         class="text-xl gap-10 mt-7 md:text-center md:max-w-xl  font-bold flex justify-center items-center md:justify-start md:items-start "
       >
-        <div class="cursor-pointer hover:text-palette-yellow400">
+        <div
+          on:click={() => {
+            window.location.href = "https://twitter.com/2Coderz";
+          }}
+          class="cursor-pointer hover:text-palette-yellow400"
+        >
           reach us out
         </div>
         <div class="cursor-pointer hover:text-palette-yellow400">
@@ -283,8 +388,18 @@
   </div>
 </section>
 
-<style>
+<style global>
   :global(html) {
     scroll-behavior: smooth;
+  }
+  :global(body)::-webkit-scrollbar {
+    width: 12px; /* width of the entire scrollbar */
+  }
+  :global(body)::-webkit-scrollbar-track {
+    @apply bg-yellow-100 /* color of the tracking area */;
+  }
+  :global(body)::-webkit-scrollbar-thumb {
+    @apply bg-palette-yellow400;
+    border-radius: 20px; /* roundness of the scroll thumb */
   }
 </style>
