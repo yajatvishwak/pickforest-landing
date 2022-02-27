@@ -1,7 +1,14 @@
 <script>
   import { fade } from "svelte/transition";
+  import { createClient } from "@supabase/supabase-js";
+
+  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+  const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+  export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
   import swal from "sweetalert";
+  let email = "";
   let testimonials = [
     {
       message: "the best shit i’ve ever used",
@@ -20,11 +27,22 @@
   setInterval(() => {
     selectedTestimonial = ++selectedTestimonial % testimonials.length;
   }, 5000);
-  function workingon(params) {
+  function workingon() {
     swal({
       title: "Hey there!",
       text: "Looks like you are early here, We are still working on this button 🚀",
 
+      button: false,
+    });
+  }
+  async function signup() {
+    const { data, error } = await supabase
+      .from("users")
+      .insert([{ email: email }]);
+    if (error) throw error;
+    swal({
+      title: "You are in! 🥳",
+      text: "Strap in your seatbelts, We'll notify you once we are ready. See you soon! ",
       button: false,
     });
   }
@@ -54,10 +72,15 @@
       <div on:click={workingon} class="cursor-pointer">Pricing</div>
     </div>
     <div class="md:flex hidden gap-5 md:gap-14 items-center">
-      <div on:click={workingon} class="font-bold cursor-pointer">Sign in</div>
       <div
         on:click={workingon}
-        class="rounded-xl p-3 btn modal-button cursor-pointer bg-palette-yellow300 text-black font-bold px-10"
+        class="hover:scale-90 transition-all font-bold cursor-pointer"
+      >
+        Sign in
+      </div>
+      <div
+        on:click={workingon}
+        class="hover:scale-90 transition-all rounded-xl p-3 btn modal-button cursor-pointer bg-palette-yellow300 text-black font-bold px-10"
       >
         Sign up
       </div>
@@ -73,11 +96,19 @@
       >
         Get crowd sentiment before posting anything on the socials
       </div>
-      <div
-        on:click={workingon}
-        class="mt-10 p-5 bg-palette-yellow300 rounded-2xl font-extrabold cursor-pointer"
-      >
-        Get started
+      <div class="flex gap-6  flex-col md:flex-row mt-10">
+        <div
+          on:click={workingon}
+          class=" hover:scale-90 transition-all text-center p-5 bg-palette-yellow300 rounded-2xl font-extrabold cursor-pointer"
+        >
+          Get started
+        </div>
+        <a
+          href="#signup"
+          class=" hover:scale-90 transition-all text-center  p-5 bg-palette-yellow100 text-palette-yellow400 rounded-2xl font-extrabold cursor-pointer"
+        >
+          Notify me when we launch
+        </a>
       </div>
     </div>
   </div>
@@ -279,19 +310,30 @@
     </div>
   </div>
 
-  <div
-    class="flex-col mx-auto max-w-screen-lg p-10 gap-4 flex md:items-center justify-center"
+  <form
+    on:submit|preventDefault={signup}
+    id="signup"
+    class=" flex-col mx-auto max-w-screen-lg p-10 gap-4 flex "
   >
-    <div class="text-5xl md:text-center md:max-w-xl font-bold  ">
-      Get crowd sentiment before posting anything on the socials
+    <div class="text-5xl  md:max-w-xl font-bold">
+      Sign up and be the first one to know
     </div>
-    <div
-      on:click={workingon}
-      class="mt-10 p-5 bg-palette-yellow300 w-fit rounded-2xl font-extrabold cursor-pointer"
+    <div>
+      <input
+        bind:value={email}
+        class="p-4 rounded-xl w-full bg-palette-yellow100 "
+        placeholder="yourawesomeemail@temp.mail"
+        type="email"
+      />
+    </div>
+    <button
+      type="submit"
+      class="p-5 hover:scale-90 transition-all  bg-palette-yellow300 w-fit rounded-2xl font-extrabold cursor-pointer"
     >
-      Get started
-    </div>
-  </div>
+      Sign me up
+    </button>
+  </form>
+
   <!-- <div
     class="flex-col mx-auto max-w-screen-lg p-10 gap-4 flex md:items-center justify-center"
   >
