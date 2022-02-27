@@ -1,5 +1,6 @@
 <script>
   import { fade } from "svelte/transition";
+
   import swal from "sweetalert";
   let testimonials = [
     {
@@ -62,10 +63,15 @@
       </div>
     </div>
   </div>
-  <div class=" flex mt-28 p-10 w-full justify-center items-center">
+  <div class=" flex mt-5 md:mt-32 p-10 w-full justify-center items-center">
     <div class="flex flex-col gap-5 items-center justify-center">
       <div class="text-7xl md:text-8xl font-extrabold text-center max-w-xl">
         Make every <span class="text-palette-yellow400">post count</span>
+      </div>
+      <div
+        class="text-xl md:text-2xl text-palette-darkGray text-center max-w-xl"
+      >
+        Get crowd sentiment before posting anything on the socials
       </div>
       <div
         on:click={workingon}
@@ -75,9 +81,10 @@
       </div>
     </div>
   </div>
+
   <div
     id="about"
-    class="mt-40   mx-auto max-w-screen-lg flex  flex-col md:flex-row "
+    class="mt-32 mx-auto max-w-screen-lg flex  flex-col md:flex-row "
   >
     <div class="w-1/2 mx-auto md:m-0">
       <img class="w-full" src="cam.png" alt="" />
@@ -206,7 +213,7 @@
             Store pictures in Buckets
           </div>
           <div class="text-xl text-center text-palette-darkGray">
-            Buckets are ablum for all your pictures that can be voted on via a
+            Buckets are album for all your pictures that can be voted on via a
             sharable link
           </div>
         </div>
@@ -271,7 +278,7 @@
       </div>
     </div>
   </div>
-  <div
+  <!-- <div
     class="flex-col mx-auto max-w-screen-lg p-10 gap-4 flex md:items-center justify-center"
   >
     <div class="text-5xl md:text-center md:max-w-xl font-bold  ">
@@ -283,7 +290,7 @@
     >
       Get started
     </div>
-  </div>
+  </div> -->
   <!-- <div class="bg-palette-yellow200 my-10 py-16">
     <div
       class="flex-col mx-auto max-w-screen-lg p-10 justify-center items-center  flex gap-10"
