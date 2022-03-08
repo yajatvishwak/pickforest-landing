@@ -73,16 +73,12 @@
     </div>
     <div class="md:flex hidden gap-5 md:gap-14 items-center">
       <div
-        on:click={workingon}
+        on:click={() => {
+          window.location.href = "https://pickforest.me";
+        }}
         class="hover:scale-90 transition-all font-bold cursor-pointer"
       >
-        Sign in
-      </div>
-      <div
-        on:click={workingon}
-        class="hover:scale-90 transition-all rounded-xl p-3 btn modal-button cursor-pointer bg-palette-yellow300 text-black font-bold px-10"
-      >
-        Sign up
+        Get Started
       </div>
     </div>
   </div>
@@ -98,17 +94,21 @@
       </div>
       <div class="flex gap-6  flex-col md:flex-row mt-10">
         <div
-          on:click={workingon}
+          on:click={() => {
+            window.location.href = "https://pickforest.me";
+          }}
           class=" hover:scale-90 transition-all text-center p-5 bg-palette-yellow300 rounded-2xl font-extrabold cursor-pointer"
         >
           Get started
         </div>
-        <a
-          href="#signup"
+        <div
+          on:click={() => {
+            window.location.href = "https://youtu.be/v_JXwjuK6IA";
+          }}
           class=" hover:scale-90 transition-all text-center  p-5 bg-palette-yellow100 text-palette-yellow400 rounded-2xl font-extrabold cursor-pointer"
         >
-          Notify me when we launch
-        </a>
+          Watch Video
+        </div>
       </div>
     </div>
   </div>
